@@ -1,23 +1,25 @@
+
 class Solution(object):
     def moveZeroes(self, nums):
         """
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        ##commenting this out since we want to try to do in-place
-        ## initialize the empty array which will contain the result
-        #movedZeros = []
         
-        ## first we find the non-zero numbers and add them to a new 
-        ## array
-        for number in nums:
-            if number == 0:
-                
-                #movedZeros.append(number)
+        ## take a copy of nums
+        copy = nums
         
-        ## append the zeros at the end of the result
-        #for zeros in range(len(nums) - len(movedZeros)):
-            #movedZeros.append(0)
-            
+        ## first we find the non-zero numbers in the copy and put them
+        ## into a right place in nums
+        it = 0
         
-        return 
+        for number in range(len(copy)):
+            ## if the number is non-zero, put it as a next element to nums
+            if copy[number] != 0:
+                nums[it] = copy[number]
+                ## increase the iterator
+                it += 1
+        
+        ## fill in the zeros
+        for zeros in range(it , len(nums)):
+            nums[zeros] = 0
