@@ -4,19 +4,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: void Do not return anything, modify nums in-place instead.
         """
-        
+        ##commenting this out since we want to try to do in-place
         ## initialize the empty array which will contain the result
-        movedZeros = []
+        #movedZeros = []
         
         ## first we find the non-zero numbers and add them to a new 
         ## array
         for number in nums:
-            if number != 0:
-                movedZeros.append(number)
+            if number == 0:
+                
+                #movedZeros.append(number)
         
         ## append the zeros at the end of the result
-        for zeros in range(len(nums) - len(movedZeros)):
-            movedZeros.append(0)
+        #for zeros in range(len(nums) - len(movedZeros)):
+            #movedZeros.append(0)
             
         
-        return movedZeros
+        return 
